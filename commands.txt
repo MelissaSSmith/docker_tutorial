@@ -1,0 +1,24 @@
+Basic Commands
+ - docker version
+ - docker info
+ - docker image ls
+
+Hello World Example
+ - docker pull hello-world
+ - docker image ls
+ - docker run hello-world
+ - docker container ls
+ - docker container ls -a
+
+Nginx Example
+ - docker container run -d nginx
+ - docker container ls
+ - docker container run -d -p 80:80 --name nginx nginx
+ - docker container ls
+ - docker container rm -f
+
+Node App Example
+ - docker build -t node-web-app .
+ - docker image ls
+ - docker run -d --name node-app-1 -p 8080:3000 node-web-app
+ - docker run -d --name node-app-2 -p 8081:3000 node-web-app
