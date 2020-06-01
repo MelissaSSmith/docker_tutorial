@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Docker Presentation</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<style>
+			p {
+				font-size: 28px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown="slides/slide1.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"></section>
+				<section>
+					<h2>What is Docker?</h2>
+					<p>
+						Docker is a platform for developers and sysadmins to build, ship, and run distributed applications.
+					</p>
+					<p>
+						Consists of Docker Engine, a portable, lightweight runtime and packaging tool, and Docker Hub.
+					</p>
+					<p>
+						Allows apps to be run unchanged on laptops, data center VMs, and any cloud.
+					</p>
+				</section>
+				<section>
+					<h2>Benefits of Docker</h2>
+					<p>Standardization across all development, testing, and production environments</p>
+					<p>Eliminates the "works on my machine" problem</p>
+					<p>Rapid Deployment</p>
+					<p>Independent of Cloud Provider</p>
+					<p>Isolation</p>
+					<p>Security</p>
+				</section>
+				<section>
+					<h2>Docker Hub</h2>
+					<p>A service provided by Docker for finding and sharing images</p>
+					<p>Where official images are hosted</p>
+					<p>Can be found at <a href="https://hub.docker.com" target="_blank">hub.docker.com</a></p>
+				</section>
+				<section>
+					<h2>Images</h2>
+					<p>The basis of everything in Docker</p>
+					<p>Contains binaries, source code, and other dependencies</p>
+					<p>Also includes metadata about the image data and how to run the image</p>
+					<p>Not a complete OS. (No kernels, drivers, etc.)</p>
+				</section>
+				<section>
+					<h2>Image Layers</h2>
+					<p>Image is made up of layers</p>					
+					<img src="images/layer-example.svg" style="width:50%;" />
+					<p>Won't download layers we already have</p>
+					<p>Image data won't be stored more than once on a filesystem</p>
+				</section>
+				<section>
+					<h2>Containers</h2>
+
+					<p>A container is an instance of an image running as a process</p>
+					<p>Can have many containers running off the same image</p>
+				</section>
+				<section>
+					<h2>Containers Continued</h2>
+					<p>Meant to be unchanging and disposable</p>
+					<p>This means that any time there is an update to the image; application data, environment variables, etc. We need to re-deploy</p>
+				</section>
+				<section>
+					<h2>Dockerfile</h2>
+					<p>File that contains a list of commands that the Docker client calls when creating an image</p>
+					<img src="images/dockerfile.PNG" />
+					<p><a href="https://hub.docker.com/_/nginx" target="_blank">Source</a></p>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
